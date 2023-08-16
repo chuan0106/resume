@@ -1,0 +1,51 @@
+.user_profile_body {
+  .user_profile_body_inner {
+    width: 1320px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    // min-height: 700px;
+    padding-bottom: 32px;
+    margin: 10px auto 0;
+
+    .user_profile_body_middle {
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      overflow: hidden;
+
+      .navList_box {
+        width: 100%;
+        position: relative;
+        border-radius: 2px;
+
+        .mainContent {
+          .list_box {
+            // background-color: #fff;
+            background-image: var(--bg-img-1);
+            color: var(--text-2);
+            padding: 24px 0;
+            margin: 0 24px;
+            white-space: pre-line;
+
+            .list_text {
+              padding: 0 12px;
+
+              span {
+                background: linear-gradient(to right, #ec695c, #61c454) no-repeat right bottom;
+                background-size: 0 2px;
+                transition: background-size 1300ms;
+              }
+
+              span:hover {
+                background-position-x: left;
+                background-size: 100% 2px;
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
