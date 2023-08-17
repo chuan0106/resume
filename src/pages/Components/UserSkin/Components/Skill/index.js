@@ -1,6 +1,7 @@
-import { connect } from 'dva';
 import styles from './style.less'
 import Caption from '@/components/Caption'
+import ProfileAsideCommonBox from '@/components/ProfileAsideCommonBox'
+import { boxContentArr } from '@/pages/data/skill/data'
 const Index = () =>
 {
     return (
@@ -14,12 +15,11 @@ const Index = () =>
                                     <blockquote>
                                         <p>
                                             {`1.DIV+CSS+JavaScript（ES5，ES6）基本WEB开发技术
-                                          2.熟悉W3C标准，能够有效解决和改善主流浏览器的兼容性问题
-                                          3.熟悉使用nodejs+mongoDB进行后台搭建
-                                          4.熟悉使用jQuery，bootstrap以及Vue主流前端框架
-                                          5.熟悉使用Vue、Vuex、Vue-Router技术、组件化开发，有vue项目开发经验
-                                          6.熟悉使用React、umi、dva、antd等技术，且有React开发经验
-                                          7.了解npm、yarn、git、svn、webpack等开发工具的使用`}
+                                              2.熟悉W3C标准，能够有效解决和改善主流浏览器的兼容性问题
+                                              3.熟练使用jQuery，bootstrap搭建页面
+                                              4.熟练使用VUE全家桶以及React、umi、dva、antd等相关技术
+                                              5.了解npm、yarn、git、svn、webpack等开发工具的使用
+                                              6.可以使用nodejs+mongoDB进行后台搭建 `}
                                         </p>
                                     </blockquote>
                                 </div>
@@ -67,41 +67,11 @@ const Index = () =>
                 </div>
                 <div className={styles.user_profile_body_right}>
                     <div className={styles.user_profile_aside}>
-                        <div className={`${styles.user_achievement} ${styles.user_profile_aside_common_box}`}>
-                            <div className={styles.aside_common_box_head}>个人优势</div>
-                            <div className={styles.aside_common_box_content}>
-                                <div className={styles.navContainer}>
-                                    {`1. 床前明月光
-                                      2. 疑是地上霜
-                                      3. 举头望明月
-                                      4. 低头思故乡`}
-                                </div>
-                            </div>
-                        </div>
-                        <div className={`${styles.user_profile_aside_common_box}`}>
-                            <div className={styles.aside_common_box_head}>专业技能</div>
-                            <div className={styles.aside_common_box_content}>
-                                <div className={styles.navContainer}>
-                                    {`1.天长地久有时尽，此恨绵绵无绝期。
-                                      2.落花有意随流水，流水无心恋落花。
-                                      3.多情只有春庭月，犹为离人照落花。
-                                      4.楼头残梦五更钟，花底离愁三月雨。
-                                      5.半醉半醒半浮生。欲将心事付瑶琴。
-                                      6.用我三生烟火,换你一世迷离。
-                        `}
-                                </div>
-                            </div>
-                        </div>
+                        {boxContentArr.map(item => <ProfileAsideCommonBox key={`${item.title}${item.id}`} {...item} />)}
                     </div>
                 </div>
             </div>
         </div>
     );
 };
-function mapDispatchToProps ({ resume })
-{
-    return {
-        resume
-    }
-}
-export default connect(mapDispatchToProps)(Index);
+export default Index

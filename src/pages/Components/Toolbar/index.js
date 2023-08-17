@@ -6,18 +6,11 @@ import Theme from '@/components/Theme'
 import { useDispatch } from 'umi';
 import { connect } from 'dva';
 import logo from '@/assets/zangxiaochaun.jpg'
-// transform 可以不加~
 const contentStyleShow = {
     display: 'block',
-    // transform: 'translateX(0%)',
-    // opacity: 1
-
 }
-// 因为把这个东西隐藏掉了 所以显示的时候不会有动画 或者 opacity 用 state 定义
 const contentStyleHide = {
     display: 'none',
-    // transform: 'translateX(80%)',
-    // opacity: 0
 }
 const data = [
     { name: '简介', id: 1 },
@@ -25,14 +18,6 @@ const data = [
     { name: '学校', id: 3 },
     { name: '技能', id: 4 },
     { name: '公司', id: 5 },
-]
-const data1 = [
-    { name: '头像', id: 1 },
-    { name: '会员中心', id: 2 },
-    { name: '足迹', id: 3 },
-    { name: '动态', id: 4 },
-    { name: '消息', id: 5 },
-    { name: '创作', id: 6 }
 ]
 // input 显示内容
 const inputName = [
@@ -52,12 +37,10 @@ const listData = [
     { name: 'github', text: 'github.com/chuan0106', id: 5 },
 ]
 
-
 const Index = ({ resumeType }) =>
 {
     const dispatch = useDispatch();
-    const [active, setActive] = useState(data[0].id),
-        [vipName, setVipName] = useState('会员中心 '), // 后面有加了个空格的
+    const
         [placeholder, setPlaceholder] = useState(inputName[0]),  // 首次从1开始
         [randomIndex, setRandomIndex] = useState(1),  // 3秒后从1开始依次播放
         [mouseUser, setMouseUser] = useState(false)  // 用户鼠标移入移出
@@ -91,7 +74,6 @@ const Index = ({ resumeType }) =>
     const activeFun = (data) =>
     {
         const { id, name } = data
-        setActive(id)
 
         dispatch({
             type: 'resume/setType',
@@ -134,39 +116,12 @@ const Index = ({ resumeType }) =>
                                 <span style={!placeholder.type ? { display: 'none' } : null} className={styles.icon_fire}></span>
                                 <input autoComplete='off' readOnly placeholder={placeholder.name} type="text" />
                                 <button>
-                                    {/* <i></i> */}
-                                    {/* <span>搜索</span> */}
                                 </button>
                             </div>
                         </div>
                     </div>
                     <div className={styles.toolbar_container_right}>
                         <div className={`${styles.toolbar_btnS} ${styles.onlyUser}`}>
-
-
-                            {/* <div className={`${styles.toolbar_btn} ${styles.toolbar_btn_vip} ${styles.toolbar_fl} `}>
-                                <a href="">
-                                    {vipName}
-                                    <img src={gift} alt="" />
-                                </a>
-                            </div>
-                            <div className={`${styles.toolbar_btn} ${styles.toolbar_btn_collect} ${styles.toolbar_fl} `}>
-                                <a href="">
-                                    足迹
-                                </a>
-                            </div>
-                            <div className={`${styles.toolbar_btn} ${styles.toolbar_btn_dynamic} ${styles.toolbar_fl} `}>
-                                <a href="">
-                                    动态
-                                </a>
-                            </div>
-                            <div className={`${styles.toolbar_btn} ${styles.toolbar_btn_msg} ${styles.toolbar_fl} `}>
-                                <div className={styles.toolbar_subMenu_box}>
-                                    <a href="">
-                                        <span className={styles.pos_rel}>消息</span>
-                                    </a>
-                                </div>
-                            </div> */}
                             <div onMouseEnter={handleMouse(true)}
                                 onMouseLeave={handleMouse(false)} className={`${styles.toolbar_btn} ${styles.toolbar_btn_user} ${styles.toolbar_fl} ${styles.toolbar_subMenu_box}  ${mouseUser ? styles.toolbar_btn_user_action : null} `}>
                                 <a className={styles.hasAvatar} href="">

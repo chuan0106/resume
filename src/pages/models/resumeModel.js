@@ -1,9 +1,8 @@
 export default {
-
     namespace: 'resume',
     state: {
-        theme: '',
-        type: '技能'
+        theme: '', // 主题 跟随电脑主题色联动 控制场景切换
+        type: '技能'  // 默认模块
     },
 
     subscriptions: {
