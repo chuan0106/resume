@@ -35,6 +35,7 @@
 /* 暗色主题 */
 html[data-theme='dark'] {
   --bg-1: #1a1a1a;
+  --bg-2: #252424;
   --bg-img-1: linear-gradient(to right, #434343 0%, black 100%);
   --text-1: rgba(255, 255, 255, 0.97);
   --text-2: rgba(255, 255, 255, 0.89);
@@ -59,6 +60,10 @@ html[data-theme='dark'] {
   );
   --ball-text-bg-hover: linear-gradient(to right, #434343 0%, black 100%);
   --hover-bg: #3d3d4d;
+  --skill-bg: rgba(26, 26, 26, 0.15);
+  --skill-left-bg: #1a1a1a;
+  --heading_h3_text: #4dd0e1;
+  --heading_bottom_solid: rgba(0, 216, 255, 0.7);
 
   --white: #1a1a1a;
   --white-soft: #f9f9f9;
@@ -125,6 +130,7 @@ html[data-theme='dark'] {
 /* 定义根作用域下的变量 */
 :root {
   --bg-1: hsl(219, 30%, 88%);
+  --bg-2: #9e9999;
   --bg-img-1: linear-gradient(45deg, #8baaaa 0%, #ae8b9c 100%);
   --text-1: #213547;
   --text-2: #2a4257;
@@ -153,6 +159,12 @@ html[data-theme='dark'] {
     rgba(83, 120, 149) 100%
   );
   --hover-bg: #f0f0f5;
+  --skill-bg: rgba(189, 222, 226, 0.15);
+  /* --skill-bg: rgba(77, 208, 225, 0.15); */
+  --skill-left-bg: rgba(160, 205, 211, 0.35);
+  /* --skill-left-bg: rgba(38, 198, 218, 0.35); */
+  --heading_h3_text: #1a1a1a;
+  --heading_bottom_solid: rgba(26, 26, 26, 0.7);
 
   --white: #ffffff;
   --white-soft: #f9f9f9;
