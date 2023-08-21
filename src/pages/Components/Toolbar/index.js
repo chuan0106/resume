@@ -15,9 +15,9 @@ const contentStyleHide = {
 const data = [
     { name: '简介', id: 1 },
     { name: '项目', id: 2 },
-    { name: '学校', id: 3 },
-    { name: '技能', id: 4 },
-    { name: '公司', id: 5 },
+    { name: '技能', id: 3 },
+    { name: '公司', id: 4 },
+    // { name: '学校', id: 5 }
 ]
 // input 显示内容
 const inputName = [

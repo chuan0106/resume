@@ -4,6 +4,7 @@ const Personal_advantages = {
     2. 在博客中分享遇到的问题以及解决方法
     3. 有BS/CS端开发经验
     4. 封装项目中常用组件
+    5. 较高的技术热情和积极性，喜欢钻研新技术落地到业务场景
     `
 }
 const professional_skills = {

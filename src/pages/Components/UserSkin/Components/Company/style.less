@@ -8,7 +8,7 @@
     padding-bottom: 32px;
     margin: 10px auto 0;
 
-    .user_profile_body_middle {
+    .user_profile_body_left {
       -webkit-box-flex: 1;
       -ms-flex: 1;
       flex: 1;
@@ -23,6 +23,7 @@
           .list_box {
             // background-color: #fff;
             background-image: var(--bg-img-1);
+            margin-bottom: 10px;
           }
 
 
@@ -167,6 +168,53 @@
         }
       }
 
+
+    }
+
+
+    .user_profile_body_right {
+      width: 338px;
+      -webkit-box-flex: 0;
+      -ms-flex: none;
+      flex: none;
+      margin-left: 10px;
+
+      .user_profile_aside {
+        width: 338px;
+        position: sticky;
+
+        .user_profile_aside_common_box {
+          // background: #fff;
+          background-image: var(--bg-img-1);
+          border-radius: 2px;
+          margin-bottom: 10px;
+        }
+
+        .user_achievement {
+          margin-bottom: 10px;
+        }
+
+        .aside_common_box_head {
+          font-size: 16px;
+          // color: #222226;
+          color: var(--text-1);
+          font-weight: 500;
+          line-height: 48px;
+          padding-left: 16px;
+          border-bottom: 1px solid #e8e8ed;
+        }
+
+        .chart_common_box_content {
+          padding: 10px;
+          white-space: pre-line;
+          color: var(--text-2);
+
+          .main {
+            width: 100%;
+            height: 220px;
+          }
+        }
+      }
 
     }
   }

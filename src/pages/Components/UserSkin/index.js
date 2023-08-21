@@ -3,7 +3,6 @@ import ProfileHead from './ProfileHead'
 import Main from './Main.js'
 const Index = () =>
 {
-
     return (
         <div className={styles.userSkinContainer}>
             <ProfileHead />

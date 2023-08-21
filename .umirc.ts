@@ -9,7 +9,7 @@ export default defineConfig({
             path: '/',
             component: '@/layouts/Common',
             routes: [
-                { path: '/', name: '111', component: '@/pages' },
+                { path: '/', name: '简历', component: '@/pages' },
             ],
         },
     ],

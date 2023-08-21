@@ -19,7 +19,7 @@ const Index = () =>
                                               3.熟练使用jQuery，bootstrap搭建页面
                                               4.熟练使用VUE全家桶以及React、umi、dva、antd等相关技术
                                               5.了解npm、yarn、git、svn、webpack等开发工具的使用
-                                              6.可以使用nodejs+mongoDB进行后台搭建 `}
+                                              6.可以使用nodejs+mongoDB进行后台搭建`}
                                         </p>
                                     </blockquote>
                                 </div>
@@ -48,7 +48,7 @@ const Index = () =>
                                         在过去一年内，学习并掌握了Vue.js和React等流行前端框架，将其应用于个人项目中。
                                     </span>
                                 </div>
-                                <div className={styles.list_text}>
+                                {/* <div className={styles.list_text}>
                                     <blockquote>
                                         <h4>总结</h4>
                                         <p>
@@ -56,7 +56,7 @@ const Index = () =>
                                             我以强烈的自主学习能力、问题解决能力以及多样化学习方法为基础，不断推动自己跟随技术发展。我的持续学习和适应能力使我能够快速掌握新技术，并将其应用于实际项目中，为团队的成功做出贡献。
                                         </p>
                                     </blockquote>
-                                </div>
+                                </div> */}
 
                             </article>
                         </div>

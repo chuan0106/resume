@@ -17,7 +17,7 @@ import webpackIcon from '@/assets/icon/webpack-icon.png'
 import mapBoxIcon from '@/assets/icon/mapBox-icon.png'
 import echartsIcon from '@/assets/icon/echarts-icon.png'
 import betterScrollIcon from '@/assets/icon/better-scroll-icon.png'
-
+import lessIcon from '@/assets/icon/less-icon.png'
 
 const icon_raw = [
     { img: reactIcon, title: 'react', src: 'https://react.docschina.org/', id: 6 },
@@ -36,20 +36,20 @@ const icon_raw = [
     { img: betterScrollIcon, title: 'betterScroll', src: 'https://better-scroll.github.io/docs/en-US/', id: 13 },
 ]
 const icon = [
-    { img: htmlIcon, title: 'HTML5', src: 'https://www.w3school.com.cn/html/index.asp', id: 1 },
-    { img: cssIcon, title: 'CSS3', src: 'https://www.w3school.com.cn/css/index.asp', id: 2 },
-    { img: jsIcon, title: 'JavaScript', src: 'https://www.w3school.com.cn/js/index.asp', id: 3 },
-    { img: jqueryIcon, title: 'Jquery', src: 'https://www.w3cschool.cn/jquery/', id: 4 },
-    { img: ajaxIcon, title: 'AJAX', src: 'http://doc.yaojieyun.com/www.runoob.com/ajax/ajax-intro.html', id: 5 },
-    { img: reactIcon, title: 'react', src: 'https://react.docschina.org/', id: 6 },
-    { img: vueIcon, title: 'vue', src: 'https://cn.vuejs.org/', id: 7 },
-    { img: webpackIcon, title: 'webpack', src: 'https://www.webpackjs.com/', id: 8 },
-    { img: umiIcon, title: 'umi', src: 'https://v3.umijs.org/zh-CN', id: 9 },
-    { img: nodeIcon, title: 'nodejs', src: 'https://nodejs.org/en', id: 10 },
-
-    { img: mapBoxIcon, title: 'mapBox', src: 'https://docs.mapbox.com/', width: '84px', id: 11 },
-    { img: echartsIcon, title: 'echarts', src: 'https://echarts.apache.org/zh', id: 12 },
-    { img: betterScrollIcon, title: 'betterScroll', src: 'https://better-scroll.github.io/docs/en-US/', id: 13 },
+    { img: htmlIcon, title: 'HTML5', src: 'https://www.w3school.com.cn/html/index.asp', width: 22, id: 1 },
+    { img: cssIcon, title: 'CSS3', src: 'https://www.w3school.com.cn/css/index.asp', width: 22, id: 2 },
+    { img: jsIcon, title: 'JavaScript', src: 'https://www.w3school.com.cn/js/index.asp', width: 22, id: 3 },
+    { img: jqueryIcon, title: 'Jquery', src: 'https://www.w3cschool.cn/jquery/', width: 22, id: 4 },
+    { img: ajaxIcon, title: 'AJAX', src: 'http://doc.yaojieyun.com/www.runoob.com/ajax/ajax-intro.html', width: 22, id: 5 },
+    { img: reactIcon, title: 'react', src: 'https://react.docschina.org/', width: 22, id: 6 },
+    { img: vueIcon, title: 'vue', src: 'https://cn.vuejs.org/', width: 22, id: 7 },
+    { img: webpackIcon, title: 'webpack', src: 'https://www.webpackjs.com/', width: 22, id: 8 },
+    { img: umiIcon, title: 'umi', src: 'https://v3.umijs.org/zh-CN', width: 22, id: 9 },
+    { img: nodeIcon, title: 'nodejs', src: 'https://nodejs.org/en', width: 22, id: 10 },
+    { img: mapBoxIcon, title: 'mapBox', src: 'https://docs.mapbox.com/', width: 84, id: 11 },
+    { img: echartsIcon, title: 'echarts', src: 'https://echarts.apache.org/zh', width: 22, id: 12 },
+    { img: betterScrollIcon, title: 'betterScroll', src: 'https://better-scroll.github.io/docs/en-US/', width: 22, id: 13 },
+    { img: lessIcon, title: 'less', src: 'https://better-scroll.github.io/docs/en-US/', width: 22, id: 14 },
 ]
 const user_Profile_views = [
     { name: '总项目量', num: 9, id: 1 },
@@ -86,7 +86,7 @@ const Index = () =>
                                         <img src={purple} alt="" />
                                         <span>码龄3年</span>
                                     </div>
-                                    <div className={`${styles.user_profile_icon} ${styles.animation} ${extend ? styles.active : null} `} >
+                                    <div style={extend ? { width: `${icon.reduce((total, icon) => total + (icon.width + 4), 0)}px` } : null} className={`${styles.user_profile_icon} ${styles.animation}`} >
                                         {icon.map((icon, i) => (
                                             <a href={icon.src} target='_blank' key={i}>
                                                 <img style={{ width: icon.width }} title={icon.title} src={icon.img} alt={icon.title} />
@@ -125,7 +125,7 @@ const Index = () =>
                 </div>
                 <div className={styles.user_profile_head_info_b}>
                     <p className={`${styles.introduction_fold} ${styles.default}`}>
-                        <span>个人简介：</span>每天进步亿点点
+                        <span>期望城市：</span>北京或者郑州
                     </p>
                     <div className={styles.user_profile_head_address}>
                         <p>
@@ -151,12 +151,12 @@ const Index = () =>
                             </ul>
                             <div className={styles.user_profile_wrapper}>
                                 <div className={styles.user_profile_wrapper_box}>
-                                    <span>期望城市：</span>
-                                    <span className={styles.user_profile_title}>北京或者河南</span>
+                                    <span>个人简介：</span>
+                                    <span className={styles.user_profile_title}>每天进步亿点点</span>
                                 </div>
                                 <div className={styles.user_profile_wrapper_box}>
-                                    <span>喜好：</span>
-                                    <span className={styles.user_profile_title}>编码 听音乐 玩拳皇15</span>
+                                    <span>期望薪资：</span>
+                                    <span className={styles.user_profile_title}>12-14K</span>
                                 </div>
                             </div>
                         </div>

@@ -196,9 +196,20 @@ const tabBar = [
     { name: 'Vue', num: VueProject.length, id: 3, content: VueProject },
     { name: 'Jquery', num: JqueryProject.length, id: 4, content: JqueryProject },
 ]
+
+
+const dayDif = (date1, date2) => Math.ceil(Math.abs(date1.getTime() - date2.getTime()) / 86400000)
+var currentDate = new Date();
+var year = currentDate.getFullYear(); // 获取当前年份
+var month = currentDate.getMonth() + 1; // 获取当前月份（月份从0开始，需要加1）
+var day = currentDate.getDate(); // 获取当前日期
+month = month < 10 ? "0" + month : month;
+day = day < 10 ? "0" + day : day;
+var formattedDate = year + "-" + month + "-" + day; // 拼接成指定格式的日期字符串
+
 const companys = [
-    { name: '相数科技', logo: dataOjo, time_start: '2021-08', time_end: '至今', src: 'https://www.dataojo.com/#/home', jianjie: '相数科技是行业领先的数字孪生和时空大数据平台及服务供应商,专注于数字孪生技术及平台的自主研发,利用时空大数据复刻全真世界,融合人工智能技术,结合行业理解和商业生态,为政府及企业智慧化应用...', id: 1 },
-    { name: '亮点网络', time_start: '2020-02', time_end: '2020-06', src: 'dangerouslySetInnerHTML ', id: 2 }
+    { name: '相数科技', value: dayDif(new Date('2021-08-02'), new Date(formattedDate)) + 1, color: '#5dbacf', logo: dataOjo, time_start: '2021-08', time_end: '至今', src: 'https://www.dataojo.com/#/home', jianjie: '相数科技是行业领先的数字孪生和时空大数据平台及服务供应商,专注于数字孪生技术及平台的自主研发,利用时空大数据复刻全真世界,融合人工智能技术,结合行业理解和商业生态,为政府及企业智慧化应用...', id: 1 },
+    { name: '亮点网络', value: dayDif(new Date('2021-02-02'), new Date('2021-06-04')) + 1, color: '#9fe080', time_start: '2020-02', time_end: '2020-06', src: 'dangerouslySetInnerHTML ', id: 2 }
 ]
 
 export { tabBar, projects, companys }
