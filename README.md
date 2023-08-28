@@ -25,7 +25,7 @@ yarn start
 
 ```bash
 $ git clone https://github.com/chuan0106/resume.git
-$ cd ant-design
+$ cd resume
 $ yarn
 $ yarn start
 ```
