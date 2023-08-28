@@ -1,9 +1,3 @@
-<p align="center">
-  <a href="http://chuan0106.3vfree.club/">
-    <img width="800" src="./public/preview/home.png">
-  </a> 
-</p>
-
 <h1 align="center">Online Resume</h1>
 
 <div align="center">
@@ -12,7 +6,7 @@
 
 ## 安装依赖项
 ```bash
-npm install antd --save
+yarn
 ```
 ## 启动开发服务器
 ```bash
