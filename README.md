@@ -1,6 +1,6 @@
 <p align="center">
   <a href="http://chuan0106.3vfree.club/">
-    <img src="https://www.dataojocloud.com/dataeye/v1/data/image/get?imageid=64ec5f1cb5b1ce097dfe4f2b">
+    <img width="800" src="https://www.dataojocloud.com/dataeye/v1/data/image/get?imageid=64ec5f1cb5b1ce097dfe4f2b">
   </a>
 </p>
 
