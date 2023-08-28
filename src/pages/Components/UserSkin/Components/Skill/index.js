@@ -19,7 +19,8 @@ const Index = () =>
                                               3.熟练使用jQuery，bootstrap搭建页面
                                               4.熟练使用VUE全家桶以及React、umi、dva、antd等相关技术
                                               5.了解npm、yarn、git、svn、webpack等开发工具的使用
-                                              6.可以使用nodejs+mongoDB进行后台搭建`}
+                                              6.可以使用nodejs+mongoDB进行后台搭建
+                                              7.熟悉模块化开发、组件化开发、提高代码灵活性和复用性，提高代码可维护性`}
                                         </p>
                                     </blockquote>
                                 </div>

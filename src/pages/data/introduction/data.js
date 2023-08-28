@@ -5,6 +5,7 @@ const Personal_advantages = {
     3. 有BS/CS端开发经验
     4. 封装项目中常用组件
     5. 较高的技术热情和积极性，喜欢钻研新技术落地到业务场景
+    6. 熟练运用多种性能优化技巧，包括页面加载速度优化、响应式设计、代码分割与按需加载等，以提升用户体验和网站加载效率。
     `
 }
 const professional_skills = {
@@ -15,6 +16,6 @@ const professional_skills = {
     4.熟练使用VUE全家桶以及React、umi、dva、antd等相关技术
     5.了解npm、yarn、git、svn、webpack等开发工具的使用
     6.可以使用nodejs+mongoDB进行后台搭建
-    `
+    7.熟悉模块化开发、组件化开发、提高代码灵活性和复用性，提高代码可维护性`
 }
 export { Personal_advantages, professional_skills }
