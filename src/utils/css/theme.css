@@ -1,38 +1,4 @@
 /* 暗色主题 */
-/* html[data-theme='dark'] {
-  --text-color: '#fff';
-  --bg1: #c7ffdd;
-  --bg2: #fbd988;
-  --switch: #44eb86;
-  --ball_bg1: #fff;
-  --ball_bg2: #96ccac;
-  --ball_bg3: #5b5b6b;
-  --ball1: #fff;
-  --ball2: #eaf5fc;
-  --ball3: #689b7c;
-  --ball4: #f9f6de;
-  --ball5: #fff;
-} */
-
-/* 定义根作用域下的变量 */
-/* :root {
-  --text-color: '#333';
-  --bg1: #d299c2;
-  --bg2: #fef9d7;
-  --switch: #f089d3;
-  --ball_bg1: #fff;
-  --ball_bg2: #ff21c0;
-  --ball_bg3: #5b5b6b;
-  --ball1: #fff;
-  --ball2: #eaf5fc;
-  --ball3: #efcde6;
-  --ball4: #f9f6de;
-  --ball5: #f9f6de;
-  --ball6: #fff;
-}
- */
-
-/* 暗色主题 */
 html[data-theme='dark'] {
   --bg-1: #1a1a1a;
   --bg-2: #252424;
@@ -64,6 +30,7 @@ html[data-theme='dark'] {
   --skill-left-bg: #1a1a1a;
   --heading_h3_text: #4dd0e1;
   --heading_bottom_solid: rgba(0, 216, 255, 0.7);
+  --github: rgba(235, 235, 235, 0.6);
 
   --white: #1a1a1a;
   --white-soft: #f9f9f9;
@@ -165,6 +132,7 @@ html[data-theme='dark'] {
   /* --skill-left-bg: rgba(38, 198, 218, 0.35); */
   --heading_h3_text: #1a1a1a;
   --heading_bottom_solid: rgba(26, 26, 26, 0.7);
+  --github: rgba(60, 60, 60, 0.7);
 
   --white: #ffffff;
   --white-soft: #f9f9f9;

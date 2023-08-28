@@ -1,9 +1,12 @@
 import { useState, useEffect, memo } from 'react'
 import styles from './style.less'
-import { message } from 'antd'
+import { message, Tooltip } from 'antd'
+import { GithubOutlined } from '@ant-design/icons';
 import user from './user.js'
 import Theme from '@/components/Theme'
 import { useDispatch } from 'umi';
+
+
 import { connect } from 'dva';
 import logo from '@/assets/zangxiaochaun.jpg'
 const contentStyleShow = {
@@ -168,6 +171,9 @@ const Index = ({ resumeType }) =>
                                     </div>
                                 </div>
                             </div>
+                            <a href='https://github.com/chuan0106/resume' target="_blank" className={`${styles.toolbar_btn}  ${styles.toolbar_fl} `}>
+                                <Tooltip placement="bottom" title={<span>Github</span>}><GithubOutlined style={{ color: 'var(--text-1)' }} className={styles.github} /></Tooltip>
+                            </a>
                             <div className={`${styles.toolbar_btn} ${styles.toolbar_btn_write} ${styles.toolbar_fl} `}>
                                 <Theme />
                             </div>

@@ -262,7 +262,11 @@
             transition: all .3s ease-out;
             -webkit-transform-origin: top center;
             transform-origin: top center;
+
+
+
           }
+
 
           // 用户触碰显示
           .toolbar_plugin {
@@ -518,6 +522,26 @@
           }
         }
       }
+    }
+  }
+
+  .github {
+    margin-right: 16px;
+    margin-top: calc((48px - 32px)/ 2);
+    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+    -webkit-transform-origin: top center;
+    transform-origin: top center;
+    cursor: pointer;
+
+    &:hover {
+      -webkit-transform: scale(1.2) translate(0, 10px);
+      transform: scale(1.2) translate(0, 10px);
+    }
+
+    svg {
+      width: 32px;
+      height: 32px;
     }
   }
 }
