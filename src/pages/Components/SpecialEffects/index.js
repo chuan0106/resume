@@ -2,12 +2,11 @@ import { useEffect, useRef, Fragment } from 'react';
 import styles from './style.less'
 import { connect } from 'dva';
 import { particle, rain } from '@/components/RainEffect'
-const Index = ({ resume }) =>
+const Index = ({ theme }) =>
 {
     const rainRef = useRef(null)
     const particleRef = useRef(null)
     let animationFrameId = useRef(null);
-    const { theme } = resume
     useEffect(() =>
     {
         if (theme && theme === 'light')
@@ -26,7 +25,7 @@ const Index = ({ resume }) =>
         {
             cancelAnimationFrame(animationFrameId.current);
         };
-    }, [resume])
+    }, [theme])
 
     return (
         <Fragment>
@@ -38,7 +37,7 @@ const Index = ({ resume }) =>
 function mapDispatchToProps ({ resume })
 {
     return {
-        resume
+        theme: resume.theme
     }
 }
 export default connect(mapDispatchToProps)(Index);
