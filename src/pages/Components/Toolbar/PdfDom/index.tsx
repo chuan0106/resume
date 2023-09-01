@@ -1,6 +1,6 @@
 import { useState, useEffect, Fragment } from 'react';
 import { PDFViewer, Font, Image, Document, Page, Text, StyleSheet } from '@react-pdf/renderer';
-
+import web2023 from '@/assets/common/web2023.pdf'
 const Index = () => {
     const [pdfUrl, setPdfUrl] = useState('')
     useEffect(() => {
@@ -252,11 +252,17 @@ const Index = () => {
             </PDFViewer>
         )
     }
+
     return (
         <Fragment>
-            <PDFViewer src={pdfUrl} style={{ width: '100%', height: '72vh' }}></PDFViewer >
+            {/* react-pdf */}
+            <PDFViewer src={web2023} style={{ width: '100%', height: '72vh' }}></PDFViewer >
+            {/* 嵌入pdf */}
             {/* <embed src={`${pdfUrl}`} style={{ height: '72vh' }} width={'100%'} ></embed> */}
+            {/* 编辑pdf */}
             {/* {editorPdf()} */}
+            {/* 测试 mock pdf */}
+            {/* <img style={{ width: '100%', height: '72vh' }} src={pdfUrl} alt="" /> */}
         </Fragment>
     )
 

@@ -1,13 +1,14 @@
-import { useState, useEffect, memo } from 'react'
+import { FC, useState, useEffect, memo } from 'react'
 import styles from './style.less'
 import { useDispatch } from 'umi';
 import { connect } from 'dva';
-import { message, Tooltip, Modal } from 'antd'
+import { message, Tooltip, Modal, Image } from 'antd'
 import { GithubOutlined, FilePdfOutlined } from '@ant-design/icons';
 import user from './user'
 import Theme from '@/components/Theme'
 import PdfDom from './PdfDom'
 
+import web2023 from '@/assets/common/web2023.png'
 import logo from '@/assets/zangxiaochaun.jpg'
 
 const contentStyleShow = {
@@ -40,14 +41,14 @@ const listData = [
     { name: 'github', text: 'github.com/chuan0106', id: 5 },
 ]
 
-const Index = ({ resumeType }: { resumeType: String }) => {
+const Index: FC = ({ resumeType }: { resumeType: String }) => {
     const dispatch = useDispatch();
     const
         [placeholder, setPlaceholder] = useState(inputName[0]),  // 首次从1开始
         [randomIndex, setRandomIndex] = useState(1),  // 3秒后从1开始依次播放
         [mouseUser, setMouseUser] = useState(false),  // 用户鼠标移入移出
-        [isModalOpen, setIsModalOpen] = useState(false)
-
+        [isModalOpen, setIsModalOpen] = useState(false),  // modal 展示开关
+        [visible, setVisible] = useState(false);  // 图片展示开关
 
     useEffect(() => {
         let timer = setTimeout(() => {
@@ -92,7 +93,10 @@ const Index = ({ resumeType }: { resumeType: String }) => {
     }
 
     const pdfShowHandler = () => {
-        setIsModalOpen(true);
+        // pdf
+        // setIsModalOpen(true);
+        // 图片形式的pdf
+        setVisible(true);
     }
     const handleOk = () => {
         setIsModalOpen(false);
@@ -101,7 +105,6 @@ const Index = ({ resumeType }: { resumeType: String }) => {
     const handleCancel = () => {
         setIsModalOpen(false);
     };
-
 
     return (
         <div className={styles.toolbar}>
@@ -180,6 +183,7 @@ const Index = ({ resumeType }: { resumeType: String }) => {
                             <a href='https://github.com/chuan0106/resume' target="_blank" className={`${styles.toolbar_btn}  ${styles.toolbar_fl} `}>
                                 <Tooltip placement="bottom" title={<span>Github</span>}><GithubOutlined style={{ color: 'var(--text-1)' }} className={styles.github} /></Tooltip>
                             </a>
+
                             <div onClick={pdfShowHandler} className={`${styles.toolbar_btn}  ${styles.toolbar_fl} `}>
                                 <Tooltip placement="bottom" title={<span>PDF文件</span>}><FilePdfOutlined style={{ color: 'var(--text-1)' }} className={styles.pdf} /></Tooltip>
                             </div>
@@ -190,6 +194,17 @@ const Index = ({ resumeType }: { resumeType: String }) => {
                     </div>
                 </div>
             </div>
+            <Image
+                style={{ display: 'none' }}
+                src={web2023}
+                preview={{
+                    visible,
+                    src: web2023,
+                    onVisibleChange: (value) => {
+                        setVisible(value);
+                    },
+                }}
+            />
             <Modal width={'900px'} closeIcon={false} okText={'确认'} cancelText={'取消'} open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
                 <PdfDom />
             </Modal>
