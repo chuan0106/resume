@@ -1,0 +1,475 @@
+@animationTime: 0.5s; // 弹窗开始关闭动画
+@paddingUpAndDownContent: 15px;
+@paddingSidesContent: 25px;
+
+// 公共样式 start
+.modelContainer {
+  color: #fff;
+  font-size: 24px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  background: var(--model-bg);
+  overflow: auto;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  display: -moz-box;
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  display: -o-box;
+  -o-box-align: center;
+  -o-box-pack: center;
+  display: -ms-box;
+  -ms-box-align: center;
+  -ms-box-pack: center;
+  display: box;
+  box-align: center;
+  box-pack: center;
+  -webkit-transition: all 1.0s ease-in-out;
+  -moz-transition: all 1.0s ease-in-out;
+  -o-transition: all 1.0s ease-in-out;
+  -ms-transition: all 1.0s ease-in-out;
+  transition: all 1.0s ease-in-out;
+  opacity: .8;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  // 禁止复制
+
+  -webkit-user-select: none;
+  /* Webkit浏览器 */
+  -moz-user-select: none;
+  /* Firefox浏览器 */
+  -ms-user-select: none;
+  /* IE10+浏览器 */
+  user-select: none;
+  /* 标准语法 */
+}
+
+.divStyle {
+  position: relative;
+  background: rgba(46, 52, 68, .7);
+  padding: @paddingUpAndDownContent 25px;
+  border-radius: 10px;
+  background: url(./img/model.png) no-repeat;
+}
+
+// 公共样式 end
+
+// 按钮 start
+.buttonContainer {
+  position: absolute;
+  bottom: @paddingUpAndDownContent;
+  right: @paddingSidesContent;
+
+  button {
+    position: relative;
+    color: #0ebeff;
+    font-size: 18px;
+    background: #000;
+    border: none;
+    outline: none;
+    z-index: 1;
+    border-radius: 10px;
+    // outline: 4px solid #fff;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      background-color: #0ebeff;
+      width: 200%;
+      height: 200%;
+      z-index: -2;
+      left: 50%;
+      top: 50%;
+      animation: rotate 3s infinite linear;
+      transform-origin: 0 0;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      background: #000;
+      width: calc(100% - 4px);
+      height: calc((100% - 4px));
+      left: 2px;
+      top: 2px;
+      border-radius: 10px;
+      z-index: -1;
+    }
+  }
+
+  @keyframes rotate {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+}
+
+.rotateBtn {
+  width: 75px;
+  height: 30px;
+  color: #0ebeff;
+  // ! 边框颜色
+  background: #fff;
+  cursor: pointer;
+
+  // 滚动的颜色
+  &::before {
+    background-color: yellow;
+  }
+
+  // 背景颜色
+  &::after {
+    background: #000;
+  }
+
+  // 鼠标经过停止动画
+  &:hover::before {
+    animation-play-state: paused;
+  }
+
+  // 鼠标经过线占满屏
+  &:hover {
+    background: #0ebeff;
+  }
+}
+
+// 按钮 end
+// 对象
+.object {
+  .divStyle {
+    position: relative;
+    background: rgba(46, 52, 68, .7);
+    padding: @paddingUpAndDownContent 25px;
+    border-radius: 10px;
+    background: url(./img/model.png) no-repeat;
+  }
+
+  .fadeIn {
+    animation: fadeIn @animationTime both;
+  }
+
+  .fadeEnd {
+    animation: fadeEnd @animationTime both;
+  }
+
+  .divStyle {
+    position: relative;
+    background: rgba(46, 52, 68, .7);
+    padding: @paddingUpAndDownContent 25px;
+    border-radius: 10px;
+    background: url(./img/model.png) no-repeat;
+  }
+
+  // 为标题 以及关闭按钮提供空间
+  .core {
+    padding: 50px 0 35px 0;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1em;
+  }
+
+  section {
+    position: relative;
+    margin: 0 auto;
+    width: 800px;
+    height: 300px;
+    overflow: hidden;
+  }
+
+  footer {
+    position: relative;
+    margin: 0 auto;
+    width: 800px;
+    overflow: hidden;
+    margin-top: 15px;
+
+    .imgContainer {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    img {
+      width: 250px;
+      //   height: 100%;
+    }
+
+  }
+
+  .title {
+    position: absolute;
+    top: @paddingUpAndDownContent;
+    left: @paddingSidesContent;
+    font-weight: 600;
+    margin-bottom: 1em;
+
+    span {
+      position: relative;
+    }
+
+    span:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 100%;
+      height: 4px;
+      background: var(--model_title);
+      border-radius: 2px;
+    }
+  }
+
+  .key {
+    color: #e2e2e4;
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .text {
+    font-size: 20px;
+    color: #a8b6d2;
+    flex: 1;
+    text-align: right;
+    font-weight: lighter;
+    // 换行符
+    white-space: pre-line;
+
+    span {
+      background: linear-gradient(to right, #ec695c, #61c454) no-repeat right bottom;
+      background-size: 0 2px;
+      transition: background-size 1300ms;
+    }
+
+    :hover {
+      background-position-x: left;
+      background-size: 100% 2px;
+    }
+  }
+
+  // 动画按钮 start
+  .buttonContainer {
+    position: absolute;
+    bottom: @paddingUpAndDownContent;
+    right: @paddingSidesContent;
+
+    button {
+      position: relative;
+      color: #0ebeff;
+      font-size: 18px;
+      background: #000;
+      border: none;
+      outline: none;
+      z-index: 1;
+      border-radius: 10px;
+      // outline: 4px solid #fff;
+      overflow: hidden;
+
+      &::before {
+        content: '';
+        position: absolute;
+        background-color: #0ebeff;
+        width: 200%;
+        height: 200%;
+        z-index: -2;
+        left: 50%;
+        top: 50%;
+        animation: rotate 3s infinite linear;
+        transform-origin: 0 0;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        background: #000;
+        width: calc(100% - 4px);
+        height: calc((100% - 4px));
+        left: 2px;
+        top: 2px;
+        border-radius: 10px;
+        z-index: -1;
+      }
+    }
+
+    @keyframes rotate {
+      to {
+        transform: rotate(1turn);
+      }
+    }
+  }
+
+  .rotateBtn {
+    width: 75px;
+    height: 30px;
+    color: #0ebeff;
+    // ! 边框颜色
+    background: #fff;
+    cursor: pointer;
+
+    // 滚动的颜色
+    &::before {
+      background-color: yellow;
+    }
+
+    // 背景颜色
+    &::after {
+      background: #000;
+    }
+
+    // 鼠标经过停止动画
+    &:hover::before {
+      animation-play-state: paused;
+    }
+
+    // 鼠标经过线占满屏
+    &:hover {
+      background: #0ebeff;
+    }
+  }
+
+  // 动画按钮 end
+
+  // 弹窗动画 start
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(.4) translateY(-2px) translate(3px);
+    }
+
+    40% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fadeEnd {
+
+    0% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(0);
+      opacity: 0;
+    }
+  }
+
+  // 弹窗动画 end
+}
+
+// array
+.array {
+  .title {
+    font-weight: 600;
+
+    span {
+      position: relative;
+    }
+
+    span:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 100%;
+      height: 4px;
+      background: var(--color);
+      border-radius: 2px;
+    }
+  }
+
+  .rotateBtn {
+    width: 75px;
+    height: 30px;
+    color: #0ebeff;
+    // ! 边框颜色
+    background: #fff;
+    cursor: pointer;
+
+    // 滚动的颜色
+    &::before {
+      background-color: yellow;
+    }
+
+    // 背景颜色
+    &::after {
+      background: #000;
+    }
+
+    // 鼠标经过停止动画
+    &:hover::before {
+      animation-play-state: paused;
+    }
+
+    // 鼠标经过线占满屏
+    &:hover {
+      background: #0ebeff;
+    }
+  }
+
+  .buttonContainer {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    text-align: right;
+
+    button {
+      position: relative;
+      color: #0ebeff;
+      font-size: 18px;
+      background: #000;
+      border: none;
+      outline: none;
+      z-index: 1;
+      border-radius: 10px;
+      // outline: 4px solid #fff;
+      overflow: hidden;
+
+      &::before {
+        content: '';
+        position: absolute;
+        background-color: #0ebeff;
+        width: 200%;
+        height: 200%;
+        z-index: -2;
+        left: 50%;
+        top: 50%;
+        animation: rotate 3s infinite linear;
+        transform-origin: 0 0;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        background: #000;
+        width: calc(100% - 4px);
+        height: calc((100% - 4px));
+        left: 2px;
+        top: 2px;
+        border-radius: 10px;
+        z-index: -1;
+      }
+    }
+
+    @keyframes rotate {
+      to {
+        transform: rotate(1turn);
+      }
+    }
+  }
+}

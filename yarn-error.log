@@ -1,0 +1,53 @@
+Arguments: 
+  D:\node\node.exe C:\Users\xiaoc\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js
+
+PATH: 
+  C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\SVN\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\MongoDB\bin;D:\谷歌下载\软件\mongosh-1.8.2-win32-x64\bin;;;D:\git\Git\cmd;D:\node\;C:\Users\xiaoc\AppData\Local\Microsoft\WindowsApps;D:\VsCode\Microsoft VS Code\bin;D:\QQ游戏\QQGameTempest\Hall.57938\;C:\Users\xiaoc\AppData\Roaming\npm
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.6.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  SyntaxError: D:\daily\Testing\aaa\package.json: Unexpected token } in JSON at position 411
+      at JSON.parse (<anonymous>)
+      at C:\Users\xiaoc\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:1629:59
+      at Generator.next (<anonymous>)
+      at step (C:\Users\xiaoc\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:310:30)
+      at C:\Users\xiaoc\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:321:13
+
+npm manifest: 
+  {
+    "private": true,
+    "author": "chuan0106 <xiaochuan199916@sina.com>",
+    "scripts": {
+      "dev": "umi dev",
+      "build": "umi build",
+      "postinstall": "umi setup",
+      "setup": "umi setup",
+      "start": "npm run dev"
+    },
+    "dependencies": {
+      "@better-scroll/core": "^2.5.1",
+      "@better-scroll/mouse-wheel": "^2.5.1",
+      "@better-scroll/movable": "^2.5.1",
+      "@better-scroll/slide": "^2.5.1",
+     
+    },
+    "devDependencies": {
+      "@types/react": "^18.0.33",
+      "@types/react-dom": "^18.0.11",
+      "typescript": "^5.0.3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

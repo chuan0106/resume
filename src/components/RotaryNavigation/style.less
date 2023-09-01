@@ -1,0 +1,133 @@
+.container,
+.containerActive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: linear-gradient(to right, #ed6ea0, #ec8c69);
+  width: 308px;
+  height: 308px;
+  //   background: url('~@/assets/nav/menu2.png') no-repeat;
+  background-size: 100% 100%;
+  margin: 0 auto;
+  transition: 1s;
+  border-radius: 50%;
+  background: var(--ball-bg1);
+  background-blend-mode: multiply;
+
+  // 按钮
+  .menu_toggler {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    // width: 40px;
+    // height: 40px;
+    width: 150px;
+    height: 150px;
+    z-index: 2;
+    opacity: 1;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .menuWarp,
+  .menuWarpActive {
+    width: 235px;
+    height: 235px;
+    background-color: red;
+    background: url('~@/assets/nav/menu2.png') no-repeat;
+    background-size: 100% 100%;
+
+    border-radius: 50%;
+    background: var(--ball-bg2);
+    background-blend-mode: multiply;
+
+
+    .menu_item {
+      position: absolute;
+      display: block;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 55px;
+      height: 55px;
+      opacity: 0;
+      transition: 0.5s;
+      transform: scale(.3);
+
+
+
+
+      span {
+        font-size: 12px;
+      }
+    }
+
+    // 活跃按钮
+    .menu_item_active {
+      opacity: 1;
+
+      a {
+        pointer-events: auto;
+      }
+    }
+
+    .nav_item {
+      background-image: var(--ball-text-bg) !important;
+      display: flex;
+      justify-content: space-evenly;
+      padding: 5px;
+      /* display: block; */
+      width: inherit;
+      height: inherit;
+      /* line-height: 80px; */
+      color: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      transition: 0.2s;
+      font-weight: 700;
+      align-items: center;
+
+    }
+
+    .nav_item_active,
+    .menu_item a:hover {
+      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+      color: #fff;
+      background: rgba(255, 255, 255, 0.3);
+      // font-size: 45px;
+      font-size: 16px;
+      background-image: var(--ball-text-bg-hover) !important;
+    }
+
+    //   new
+
+  }
+
+  .menuWarpActive {
+    width: 200px;
+    height: 100px;
+    background-color: red;
+    background: url('~@/assets/nav/menu2.png') no-repeat;
+    background-size: 100% 100%;
+  }
+}
+
+.containerActive {
+  width: 200px;
+  height: 100px;
+  background: transparent;
+}
