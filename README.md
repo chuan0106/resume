@@ -43,4 +43,4 @@ $ yarn start
 - 4.组件内部的状态，使用 useState、useReducer；业务数据全部放在 redux 中管理；
 - 其他规范在项目中根据实际情况决定和编写；
 
-<p align="center">项目采用umi4 与16<node版本 低版本node 会与umi不兼容</p>
+<p align="center">项目采用umi4 与16&lt;node版本 低版本node 可能会与umi不兼容</p>
