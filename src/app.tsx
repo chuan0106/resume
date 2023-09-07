@@ -1,5 +1,6 @@
 import { IRoute, matchRoutes, } from 'umi';
 import '@/utils/js/rem'
+import '@/utils/css/normalize.css'
 import Loading from './components/Loading';
 // 用于设置标题
 export function onRouteChange({ clientRoutes, location }: { clientRoutes: IRoute[]; location: Location }) {

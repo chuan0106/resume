@@ -1,0 +1,940 @@
+{
+  "globe": {
+    "range": [1, 10],
+    "space-color": "hsl(215, 61%, 19%)",
+    "horizon-blend": 0.05,
+    "star-intensity": ["interpolate", ["linear"], ["zoom"], 5, 0.15, 6, 0],
+    "high-color": "hsl(222, 71%, 75%)",
+    "color": "hsla(42, 52%, 94%, 0.69)"
+  },
+  "fog": {
+    "range": [1, 10],
+    "space-color": "transparent",
+    "horizon-blend": 0,
+    "star-intensity": 0,
+    "high-color": "transparent",
+    "color": "transparent"
+  },
+  "settings": {
+    "isPopup": true,
+    "isFog": false,
+    "isGlobe": false,
+    "globeMapStyle": "https://www.dataojocloud.com/styles/china_V3_white/style.json"
+  },
+  "markerGroups": [],
+  "lights": {
+    "ambientLight": {
+      "color": "rgba(227,222,212,1)",
+      "intensity": 0.7,
+      "host": "scene"
+    },
+    "directionalLight": {
+      "color": "rgba(68,65,56,1)",
+      "intensity": 3.6,
+      "host": "scene"
+    },
+    "pointLigh": [],
+    "spotLight": [],
+    "model": {
+      "ambientLight": {
+        "intensity": 2,
+        "host": "model",
+        "color": "rgba(255,255,255,1)"
+      },
+      "directionalLight": {
+        "intensity": 2,
+        "host": "model",
+        "color": "rgba(255,255,255,1)"
+      },
+      "hemisphereLight": { "intensity": 0, "host": "model" }
+    },
+    "toneMappingExposure": 1
+  },
+  "version": 8,
+  "name": "hailing_blue_泰州市海陵区",
+  "metadata": {
+    "mapbox:autocomposite": true,
+    "mapbox:type": "default",
+    "maputnik:renderer": "mbgljs"
+  },
+  "center": [119.88025468296246, 32.408331945702116],
+  "bounds": [
+    119.807273168922, 32.3766265931428, 120.040924940634, 32.5871927229658
+  ],
+  "zoom": 18,
+  "bearing": -7.77473183933148,
+  "pitch": 11.886789034992344,
+  "sources": {
+    "hailing": {
+      "type": "vector",
+      "tiles": [
+        "https://www.dataojocloud.com/data/docitybuilder_taizhou_hailing/{z}/{x}/{y}.pbf"
+      ],
+      "minZoom": 0,
+      "maxZoom": 24
+    },
+    "water": {
+      "type": "geojson",
+      "data": "https://www.dataojo.com/docloudresource/map_data/docitybuilder/taizhou/hailing/hailing_water_R.geojson"
+    },
+    "road_1": {
+      "type": "geojson",
+      "data": "https://www.dataojo.com/docloudresource/map_data/docitybuilder/taizhou/hailing/hailing_flowline_L.geojson"
+    }
+  },
+  "json": {
+    "building": "https://www.dataojo.com/docloudresource/map_data/docitybuilder/taizhou/hailing/bounds_file_hailing/taizhou_hailingConfig.json"
+  },
+  "sprite": "https://www.dataojo.com/docloudresource/map_data/sprites/sprite",
+  "glyphs": "https://www.dataojocloud.com/fonts/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "background",
+      "name": "背景",
+      "category": "背景",
+      "type": "background",
+      "paint": { "background-color": "rgba(86,140,216,0.73)" },
+      "layout": { "visibility": "visible" },
+      "overlay": [],
+      "segment": [],
+      "_ui": {
+        "overlay": [
+          { "color": "rgba(86,140,216,0.73)", "checked": true, "type": 2 }
+        ]
+      }
+    },
+    {
+      "id": "hailing_boundary_county_R",
+      "type": "fill",
+      "name": "区县界面",
+      "category": "行政区划",
+      "minzoom": 0,
+      "maxzoom": 24,
+      "layout": { "visibility": "visible" },
+      "paint": {
+        "fill-color": "rgba(237,237,237,1)",
+        "fill-outline-color": "rgba(21, 47, 97, 0)"
+      },
+      "overlay": [],
+      "segment": [],
+      "_ui": {
+        "colorType": 1,
+        "overlay": [
+          {
+            "color": "rgba(237,237,237,1)",
+            "checked": true,
+            "type": 2,
+            "imgUrl": "https://www.dataojocloud.com/builder/v1/data/image/get?imageId=62440717edaa452d33a17c5d"
+          }
+        ],
+        "segment": [
+          {
+            "checked": true,
+            "start": "崂山区",
+            "end": "",
+            "data": [
+              {
+                "checked": true,
+                "color": "rgba(195,195,196,1)",
+                "imgUrl": "",
+                "type": 2
+              }
+            ]
+          }
+        ]
+      },
+      "weight": "Name",
+      "segmentType": "==",
+      "source": "hailing",
+      "source-layer": "hailing_county_R"
+    },
+    {
+      "id": "hailing_road_L_2",
+      "type": "fill",
+      "name": "二级道路",
+      "category": "道路",
+      "tsource": "road_2",
+      "minzoom": 0,
+      "maxzoom": 24,
+      "layout": { "visibility": "visible" },
+      "paint": { "fill-color": "rgba(122,122,122,1)" },
+      "filter": ["none"],
+      "overlay": [],
+      "segment": [],
+      "_ui": {
+        "colorType": 1,
+        "overlay": [
+          { "color": "rgba(122,122,122,1)", "checked": true, "type": 2 }
+        ]
+      },
+      "source": "hailing",
+      "source-layer": "hailing_road_R_2"
+    },
+    {
+      "id": "hailing_road_L_1",
+      "type": "fill",
+      "name": "一级道路",
+      "category": "道路",
+      "tsource": "road_1",
+      "minzoom": 0,
+      "maxzoom": 24,
+      "layout": { "visibility": "visible" },
+      "paint": { "fill-color": "rgba(202,199,199,1)" },
+      "filter": ["none"],
+      "overlay": [],
+      "segment": [],
+      "_ui": {
+        "colorType": 1,
+        "overlay": [
+          { "color": "rgba(202,199,199,1)", "checked": true, "type": 2 }
+        ]
+      },
+      "flowingRoad": {
+        "id": "hailing_road_L_1_three-flowVecLineLayer",
+        "data": "https://www.dataojo.com/docloudresource/map_data/docitybuilder/taizhou/hailing/hailing_flowline_L.geojson",
+        "visible": false,
+        "color": "rgba(114,186,113,1)",
+        "lineWidth": 3,
+        "speed": 3,
+        "traceTime": 29,
+        "height": 1,
+        "bloomId": 0,
+        "extended": "three",
+        "layer": "flowVecLine",
+        "beforeId": "hailing_greenland_R_1",
+        "_ui": {
+          "colorType": 1,
+          "overlay": [
+            { "color": "rgba(202,199,199,1)", "checked": true, "type": 2 }
+          ]
+        }
+      },
+      "source": "hailing",
+      "source-layer": "hailing_road_R_1"
+    },
+    {
+      "id": "hailing_greenland_R_1",
+      "type": "fill",
+      "name": "一级绿地",
+      "category": "绿地",
+      "minzoom": 0,
+      "maxzoom": 24,
+      "layout": { "visibility": "visible" },
+      "paint": { "fill-color": "rgba(166,177,166,0.36)" },
+      "overlay": [
+        {
+          "fieldName": "fill-pattern",
+          "fieldValue": "https://www.dataojocloud.com/builder/v1/data/image/get?imageId=61ee55b4954edd548d95e2ee"
+        }
+      ],
+      "segment": [],
+      "_ui": {
+        "colorType": 1,
+        "overlay": [
+          {
+            "color": "rgba(166,177,166,0.36)",
+            "checked": true,
+            "type": 4,
+            "imgUrl": "https://www.dataojocloud.com/builder/v1/data/image/get?imageId=61ee55b4954edd548d95e2ee"
+          }
+        ],
+        "segment": [
+          {
+            "checked": true,
+            "start": "青岛崂山国家级风景名胜区",
+            "end": "",
+            "data": [
+              {
+                "checked": true,
+                "color": "rgba(114,186,113,0.14)",
+                "imgUrl": "https://www.dataojocloud.com/builder/v1/data/image/get?imageId=62c6a808edaa45103a7c7081",
+                "type": 4
+              }
+            ]
+          }
+        ]
+      },
+      "weight": "Name",
+      "segmentType": "==",
+      "source": "hailing",
+      "source-layer": "hailing_vegetation_R"
+    },
+    {
+      "id": "hailing_water_R_1",
+      "type": "fill",
+      "name": "一级水系",
+      "category": "水系",
+      "tsource": "water",
+      "minzoom": 0,
+      "maxzoom": 24,
+      "layout": { "visibility": "visible" },
+      "paint": {
+        "fill-color": "rgba(122,170,196,1)",
+        "fill-outline-color": "rgba(4, 64, 98, 1)"
+      },
+      "overlay": [],
+      "segment": [],
+      "_ui": {
+        "colorType": 1,
+        "overlay": [
+          { "color": "rgba(122,170,196,1)", "checked": true, "type": 2 }
+        ]
+      },
+      "flowingWater": {
+        "id": "hailing_water_R_1_three-water",
+        "waterType": 1,
+        "data": "https://www.dataojo.com/docloudresource/map_data/docitybuilder/taizhou/hailing/hailing_water_R.geojson",
+        "visible": false,
+        "dynamicColor": "rgba(213,225,236,1)",
+        "dynamicOpcity": 0.6,
+        "dynamicWaveScale": 3.7,
+        "dynamicSize": 2,
+        "dynamicSpeed": 1,
+        "dynamicMap": "./textures/water/waternormals.jpg",
+        "extended": "three",
+        "layer": "water",
+        "beforeId": "hailing_boundary_county_L",
+        "_ui": {
+          "colorType": 1,
+          "overlay": [
+            { "color": "rgba(122,170,196,1)", "checked": true, "type": 2 }
+          ]
+        },
+        "customColor": [
+          { "color": "rgba(213,225,236,1)", "checked": true, "type": 2 }
+        ]
+      },
+      "source": "hailing",
+      "source-layer": "hailing_water_R"
+    },
+    {
+      "id": "hailing_boundary_county_L",
+      "type": "line",
+      "name": "区县界线",
+      "category": "行政区划",
+      "minzoom": 0,
+      "maxzoom": 24,
+      "layout": { "visibility": "visible" },
+      "paint": {
+        "line-color": "rgba(255,240,201,1)",
+        "line-dasharray": [4, 4]
+      },
+      "overlay": [],
+      "segment": [],
+      "_ui": {
+        "colorType": 1,
+        "overlay": [
+          { "color": "rgba(255,240,201,1)", "checked": true, "type": 2 }
+        ]
+      },
+      "source": "hailing",
+      "source-layer": "hailing_county_L"
+    },
+    {
+      "id": "hailing_labelline_2-12",
+      "type": "symbol",
+      "name": "二级道路注记线",
+      "category": "道路",
+      "minzoom": 0,
+      "maxzoom": 24,
+      "layout": {
+        "visibility": "visible",
+        "text-field": "{PathName}",
+        "text-size": 13,
+        "symbol-placement": "line"
+      },
+      "paint": {
+        "icon-color": "rgba(247, 243, 243, 1)",
+        "text-color": "rgba(236, 240, 247, 1)",
+        "text-halo-color": "rgba(2, 36, 62, 1)",
+        "text-halo-width": 1
+      },
+      "source": "hailing",
+      "source-layer": "hailing_road_label_L_2"
+    },
+    {
+      "id": "hailing_labelline_L_1-10",
+      "type": "symbol",
+      "name": "一级道路注记线",
+      "category": "道路",
+      "minzoom": 0,
+      "maxzoom": 24,
+      "layout": {
+        "visibility": "visible",
+        "text-field": "{PathName}",
+        "text-size": 11,
+        "symbol-placement": "line"
+      },
+      "paint": {
+        "icon-color": "rgba(247, 243, 243, 1)",
+        "text-color": "rgba(236, 240, 247, 1)",
+        "text-halo-color": "rgba(2, 36, 62, 1)",
+        "text-halo-width": 1
+      },
+      "source": "hailing",
+      "source-layer": "hailing_road_label_L_1"
+    },
+    {
+      "id": "hailing_building_R-14",
+      "type": "fill-extrusion",
+      "name": "楼块",
+      "category": "建筑",
+      "minzoom": 0,
+      "maxzoom": 24,
+      "layout": { "visibility": "none" },
+      "paint": {
+        "fill-extrusion-color": "rgba(9, 30, 60, 0.73)",
+        "fill-extrusion-height": {
+          "property": "HEIGHT",
+          "stops": [
+            [3, 6],
+            [6, 12],
+            [18, 36],
+            [54, 108],
+            [99, 250],
+            [150, 350]
+          ],
+          "type": "exponential"
+        }
+      },
+      "roof": {
+        "id": "hailing_building_R-14_building-base",
+        "type": "fill-extrusion",
+        "source": "hailing",
+        "source-layer": "hailing_building_R",
+        "minzoom": 0,
+        "maxzoom": 24,
+        "layout": { "visibility": "none" },
+        "paint": {
+          "fill-extrusion-color": "rgba(9, 30, 60, 0.73)",
+          "fill-extrusion-height": {
+            "property": "HEIGHT",
+            "stops": [
+              [3, 6],
+              [6, 12],
+              [18, 36],
+              [54, 108],
+              [99, 250],
+              [150, 350]
+            ],
+            "type": "exponential"
+          },
+          "fill-extrusion-base": {
+            "property": "HEIGHT",
+            "stops": [
+              [3, 6],
+              [6, 12],
+              [18, 36],
+              [54, 108],
+              [99, 250],
+              [150, 350]
+            ],
+            "type": "exponential"
+          }
+        }
+      },
+      "threeBuilding": {
+        "id": "hailing_building_R-14_three-building",
+        "visible": false,
+        "isShiny": 1,
+        "num": 150,
+        "emissive": "#000000",
+        "colorOrMap": 1,
+        "segment": [
+          {
+            "image": "https://www.dataojocloud.com/builder/v1/data/image/get?imageId=62c7fd25edaa45513f5e9ee7",
+            "color": "rgba(183,190,194,1)",
+            "segmentColorOrMap": 3,
+            "segmentSpeedLoop": 1,
+            "segmentIsRoofColor": 1,
+            "segmentIsTop": 1,
+            "segmentIsBottom": 1,
+            "segmentIsDynamic": 1,
+            "segmentTopColor": "rgba(97,93,87,1)",
+            "segmentBottomColor": "rgba(60,66,80,1)",
+            "segmentRoofColor": "rgba(127,138,147,0.08)",
+            "segmentDynamicColor": "#ff00a5",
+            "start": 1,
+            "end": 5,
+            "segmentTopFading": 2,
+            "segmentBottomFading": 1,
+            "opacity": 1
+          },
+          {
+            "image": "https://www.dataojocloud.com/builder/v1/data/image/get?imageId=62c675a3edaa45103a7c7070",
+            "color": "rgba(167,167,169,0.7)",
+            "segmentColorOrMap": 3,
+            "segmentSpeedLoop": 1,
+            "segmentIsRoofColor": 1,
+            "segmentIsTop": 2,
+            "segmentIsBottom": 2,
+            "segmentIsDynamic": 1,
+            "segmentTopColor": "rgba(65,59,42,1)",
+            "segmentBottomColor": "rgba(58,47,32,1)",
+            "segmentRoofColor": "#c9e6ff",
+            "segmentDynamicColor": "#ff00a5",
+            "start": 5,
+            "end": 12,
+            "segmentTopFading": 1,
+            "segmentBottomFading": 1,
+            "opacity": 0.7
+          },
+          {
+            "image": "https://www.dataojocloud.com/builder/v1/data/image/get?imageId=6243fd7eedaa452d33a17c5a",
+            "color": "rgba(181,207,252,0.47)",
+            "segmentColorOrMap": 3,
+            "segmentSpeedLoop": 1,
+            "segmentIsRoofColor": 1,
+            "segmentIsTop": 2,
+            "segmentIsBottom": 1,
+            "segmentIsDynamic": 1,
+            "segmentTopColor": "rgba(73,82,88,1)",
+            "segmentBottomColor": "#fff",
+            "segmentRoofColor": "#c9e6ff",
+            "segmentDynamicColor": "#ff00a5",
+            "start": 12,
+            "end": 30,
+            "segmentTopFading": 1,
+            "segmentBottomFading": 1,
+            "opacity": 0.47
+          },
+          {
+            "image": "https://www.dataojocloud.com/builder/v1/data/image/get?imageId=6243fb88edaa452d33a17c59",
+            "color": "rgba(255,255,255,1)",
+            "segmentColorOrMap": 3,
+            "segmentSpeedLoop": 1,
+            "segmentIsRoofColor": 2,
+            "segmentIsTop": 2,
+            "segmentIsBottom": 1,
+            "segmentIsDynamic": 2,
+            "segmentTopColor": "rgba(171,175,196,1)",
+            "segmentBottomColor": "rgba(47,80,95,1)",
+            "segmentRoofColor": "rgba(197,210,217,1)",
+            "segmentDynamicColor": "rgba(152,147,150,1)",
+            "start": 30,
+            "end": 60,
+            "segmentTopFading": 2,
+            "segmentBottomFading": 9,
+            "opacity": 1
+          },
+          {
+            "image": "https://www.dataojocloud.com/builder/v1/data/image/get?imageId=6243fb88edaa452d33a17c59",
+            "color": "rgba(235,248,255,1)",
+            "segmentColorOrMap": 3,
+            "segmentSpeedLoop": 1,
+            "segmentIsRoofColor": 1,
+            "segmentIsTop": 2,
+            "segmentIsBottom": 2,
+            "segmentIsDynamic": 1,
+            "segmentTopColor": "rgba(255,220,120,1)",
+            "segmentBottomColor": "rgba(166,174,189,1)",
+            "segmentRoofColor": "#c9e6ff",
+            "segmentDynamicColor": "#ff00a5",
+            "start": 60,
+            "end": 80,
+            "segmentTopFading": 10,
+            "segmentBottomFading": 2,
+            "opacity": 1
+          },
+          {
+            "color": "rgba(255,244,215,1)",
+            "image": null,
+            "segmentColorOrMap": 1,
+            "segmentSpeedLoop": 1,
+            "segmentIsRoofColor": 1,
+            "segmentIsTop": 2,
+            "segmentIsBottom": 2,
+            "segmentIsDynamic": 1,
+            "segmentTopColor": "rgba(113,108,102,1)",
+            "segmentBottomColor": "rgba(100,88,88,1)",
+            "segmentRoofColor": "#c9e6ff",
+            "segmentDynamicColor": "#ff00a5",
+            "start": 80,
+            "end": 200,
+            "segmentTopFading": 9,
+            "segmentBottomFading": 1,
+            "opacity": 1
+          }
+        ],
+        "color": "rgba(244,248,255,0.73)",
+        "mapUrl": null,
+        "isRoofColor": false,
+        "roofColor": "#ff0000",
+        "isTop": false,
+        "topColor": "#fff",
+        "topFading": 5,
+        "isBottom": false,
+        "bottomColor": "#ff0000",
+        "bottomFading": 5,
+        "isDynamic": false,
+        "dynamicColor": "#ff00a5",
+        "speedLoop": 5,
+        "data": "https://www.dataojo.com/docloudresource/map_data/docitybuilder/taizhou/hailing/bounds_file_hailing/taizhou_hailingConfig.json",
+        "extended": "three",
+        "layer": "building",
+        "beforeId": "hailing_building_R-14",
+        "setType": "segment",
+        "_ui": {}
+      },
+      "_ui": {
+        "color": [
+          {
+            "color": "rgba(244,248,255,0.73)",
+            "isColorChecked": true,
+            "type": 2
+          }
+        ],
+        "threeColorType": 2,
+        "segment": [
+          {
+            "checked": true,
+            "start": "1",
+            "end": "5",
+            "data": [
+              {
+                "isColorChecked": true,
+                "color": "rgba(183,190,194,1)",
+                "imgUrl": "https://www.dataojocloud.com/builder/v1/data/image/get?imageId=62c7fd25edaa45513f5e9ee7",
+                "type": 3,
+                "isImageChecked": true
+              }
+            ],
+            "segmentIsRoofColor": false,
+            "segmentRoofColor": [
+              {
+                "checked": true,
+                "color": "rgba(127,138,147,0.08)",
+                "imgUrl": "",
+                "type": 2
+              }
+            ],
+            "segmentIsTop": false,
+            "segmentTopColor": [
+              {
+                "checked": true,
+                "color": "rgba(97,93,87,1)",
+                "imgUrl": "",
+                "type": 2
+              }
+            ],
+            "segmentTopFading": 2,
+            "segmentIsBottom": false,
+            "segmentBottomColor": [
+              {
+                "checked": true,
+                "color": "rgba(60,66,80,1)",
+                "imgUrl": "",
+                "type": 2
+              }
+            ],
+            "segmentBottomFading": 1,
+            "segmentIsDynamic": false,
+            "segmentSpeedLoop": 1,
+            "segmentDynamicColor": [
+              { "checked": true, "color": "#ff00a5", "imgUrl": "", "type": 2 }
+            ]
+          },
+          {
+            "checked": true,
+            "start": "5",
+            "end": "12",
+            "data": [
+              {
+                "isColorChecked": true,
+                "color": "rgba(167,167,169,0.7)",
+                "imgUrl": "https://www.dataojocloud.com/builder/v1/data/image/get?imageId=62c675a3edaa45103a7c7070",
+                "type": 4,
+                "isImageChecked": true
+              }
+            ],
+            "segmentIsRoofColor": false,
+            "segmentRoofColor": [
+              { "checked": true, "color": "#c9e6ff", "imgUrl": "", "type": 2 }
+            ],
+            "segmentIsTop": true,
+            "segmentTopColor": [
+              {
+                "checked": true,
+                "color": "rgba(65,59,42,1)",
+                "imgUrl": "",
+                "type": 2
+              }
+            ],
+            "segmentTopFading": 1,
+            "segmentIsBottom": true,
+            "segmentBottomColor": [
+              {
+                "checked": true,
+                "color": "rgba(58,47,32,1)",
+                "imgUrl": "",
+                "type": 2
+              }
+            ],
+            "segmentBottomFading": 1,
+            "segmentIsDynamic": false,
+            "segmentSpeedLoop": 1,
+            "segmentDynamicColor": [
+              { "checked": true, "color": "#ff00a5", "imgUrl": "", "type": 2 }
+            ]
+          },
+          {
+            "checked": true,
+            "start": "12",
+            "end": "30",
+            "data": [
+              {
+                "isColorChecked": true,
+                "color": "rgba(181,207,252,0.47)",
+                "imgUrl": "https://www.dataojocloud.com/builder/v1/data/image/get?imageId=6243fd7eedaa452d33a17c5a",
+                "type": 2,
+                "isImageChecked": true
+              }
+            ],
+            "segmentIsRoofColor": false,
+            "segmentRoofColor": [
+              { "checked": true, "color": "#c9e6ff", "imgUrl": "", "type": 2 }
+            ],
+            "segmentIsTop": true,
+            "segmentTopColor": [
+              {
+                "checked": true,
+                "color": "rgba(73,82,88,1)",
+                "imgUrl": "",
+                "type": 2
+              }
+            ],
+            "segmentTopFading": 1,
+            "segmentIsBottom": false,
+            "segmentBottomColor": [
+              { "checked": true, "color": "#fff", "imgUrl": "", "type": 2 }
+            ],
+            "segmentBottomFading": 1,
+            "segmentIsDynamic": false,
+            "segmentSpeedLoop": 1,
+            "segmentDynamicColor": [
+              { "checked": true, "color": "#ff00a5", "imgUrl": "", "type": 2 }
+            ]
+          },
+          {
+            "checked": true,
+            "start": "30",
+            "end": "60",
+            "data": [
+              {
+                "isColorChecked": true,
+                "color": "rgba(255,255,255,1)",
+                "imgUrl": "https://www.dataojocloud.com/builder/v1/data/image/get?imageId=6243fb88edaa452d33a17c59",
+                "isImageChecked": true,
+                "type": 2
+              }
+            ],
+            "segmentIsRoofColor": true,
+            "segmentRoofColor": [
+              {
+                "checked": true,
+                "color": "rgba(197,210,217,1)",
+                "imgUrl": "",
+                "type": 2
+              }
+            ],
+            "segmentIsTop": true,
+            "segmentTopColor": [
+              {
+                "checked": true,
+                "color": "rgba(171,175,196,1)",
+                "imgUrl": "",
+                "type": 2
+              }
+            ],
+            "segmentTopFading": 2,
+            "segmentIsBottom": false,
+            "segmentBottomColor": [
+              {
+                "checked": true,
+                "color": "rgba(47,80,95,1)",
+                "imgUrl": "",
+                "type": 2
+              }
+            ],
+            "segmentBottomFading": 9,
+            "segmentIsDynamic": true,
+            "segmentSpeedLoop": 1,
+            "segmentDynamicColor": [
+              {
+                "checked": true,
+                "color": "rgba(152,147,150,1)",
+                "imgUrl": "",
+                "type": 2
+              }
+            ]
+          },
+          {
+            "checked": true,
+            "start": "60",
+            "end": "80",
+            "data": [
+              {
+                "isColorChecked": true,
+                "color": "rgba(235,248,255,1)",
+                "imgUrl": "https://www.dataojocloud.com/builder/v1/data/image/get?imageId=6243fb88edaa452d33a17c59",
+                "isImageChecked": true,
+                "type": 4
+              }
+            ],
+            "segmentIsRoofColor": false,
+            "segmentRoofColor": [
+              { "checked": true, "color": "#c9e6ff", "imgUrl": "", "type": 2 }
+            ],
+            "segmentIsTop": true,
+            "segmentTopColor": [
+              {
+                "checked": true,
+                "color": "rgba(255,220,120,1)",
+                "imgUrl": "",
+                "type": 2
+              }
+            ],
+            "segmentTopFading": 10,
+            "segmentIsBottom": true,
+            "segmentBottomColor": [
+              {
+                "checked": true,
+                "color": "rgba(166,174,189,1)",
+                "imgUrl": "",
+                "type": 2
+              }
+            ],
+            "segmentBottomFading": 2,
+            "segmentIsDynamic": false,
+            "segmentSpeedLoop": 1,
+            "segmentDynamicColor": [
+              { "checked": true, "color": "#ff00a5", "imgUrl": "", "type": 2 }
+            ]
+          },
+          {
+            "checked": true,
+            "start": "80",
+            "end": "200",
+            "data": [
+              {
+                "isColorChecked": true,
+                "color": "rgba(255,244,215,1)",
+                "imgUrl": "",
+                "type": 2
+              }
+            ],
+            "segmentIsRoofColor": false,
+            "segmentRoofColor": [
+              { "checked": true, "color": "#c9e6ff", "imgUrl": "", "type": 2 }
+            ],
+            "segmentIsTop": true,
+            "segmentTopColor": [
+              {
+                "checked": true,
+                "color": "rgba(113,108,102,1)",
+                "imgUrl": "",
+                "type": 2
+              }
+            ],
+            "segmentTopFading": 9,
+            "segmentIsBottom": true,
+            "segmentBottomColor": [
+              {
+                "checked": true,
+                "color": "rgba(100,88,88,1)",
+                "imgUrl": "",
+                "type": 2
+              }
+            ],
+            "segmentBottomFading": 1,
+            "segmentIsDynamic": false,
+            "segmentSpeedLoop": 1,
+            "segmentDynamicColor": [
+              { "checked": true, "color": "#ff00a5", "imgUrl": "", "type": 2 }
+            ]
+          }
+        ],
+        "mode": "three"
+      },
+      "source": "hailing",
+      "source-layer": "hailing_building_R"
+    },
+    {
+      "id": "poi_county",
+      "type": "symbol",
+      "name": "区县名",
+      "category": "兴趣点",
+      "minzoom": 0,
+      "maxzoom": 24,
+      "layout": {
+        "text-field": "{Name}",
+        "visibility": "visible",
+        "text-anchor": "bottom-left",
+        "text-offset": [0.5, 0.5],
+        "text-font": ["", ""],
+        "text-size": 14,
+        "icon-image": "circle-stroked-12",
+        "text-justify": "center"
+      },
+      "paint": {
+        "text-color": "rgba(255, 255, 255, 1)",
+        "text-halo-color": "rgba(3, 51, 101, 1)",
+        "text-opacity": 1,
+        "text-halo-width": 2,
+        "text-halo-blur": 0
+      },
+      "source": "hailing",
+      "source-layer": "hailing_poi_county"
+    },
+    {
+      "id": "three-sky",
+      "data": [
+        "https://www.dataojo.com/docloudresource/image/baseSceneEditor/sky/sky13/posx.jpg",
+        "https://www.dataojo.com/docloudresource/image/baseSceneEditor/sky/sky13/negx.jpg",
+        "https://www.dataojo.com/docloudresource/image/baseSceneEditor/sky/sky13/posy.jpg",
+        "https://www.dataojo.com/docloudresource/image/baseSceneEditor/sky/sky13/negy.jpg",
+        "https://www.dataojo.com/docloudresource/image/baseSceneEditor/sky/sky13/posz.jpg",
+        "https://www.dataojo.com/docloudresource/image/baseSceneEditor/sky/sky13/negz.jpg"
+      ],
+      "visible": true,
+      "extended": "three",
+      "layer": "sky",
+      "_ui": { "selectSky": "sky13" }
+    },
+    {
+      "id": "three-risingLine",
+      "bounds": [
+        118.56773921408035, 32.16655590900007, 118.660960688, 31.983974403000047
+      ],
+      "num": 30,
+      "lineWidth": 2,
+      "visible": true,
+      "extended": "three",
+      "layer": "risingLine",
+      "_ui": {}
+    },
+    {
+      "url": "https://www.dataojocloud.com/builder_model/d777b137ab5541b2ba464e7312ea36e8/N4QAkv/taizhou_blue-fantie002.gltf",
+      "origin": [119.87731350021147, 32.40634770862591],
+      "visible": true,
+      "drag": true,
+      "extended": "three",
+      "layer": "model",
+      "type": "gltf",
+      "envMap": { "visible": false, "path": "", "map": [], "intensity": 1 },
+      "_ui": { "name": "tz_dm", "type": "模型" },
+      "id": "3d-model_1682478478014",
+      "altitude": -1.8
+    }
+  ],
+  "id": "hailing_blue",
+  "owner": "",
+  "logo": {
+    "visible": true,
+    "url": "./logo/logo.png",
+    "width": 200,
+    "height": 40,
+    "position": "right"
+  },
+  "navigation": { "visible": false }
+}
